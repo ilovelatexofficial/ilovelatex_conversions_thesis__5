@@ -1,0 +1,120 @@
+\documentclass[a4paper,12pt,oneside,fullcap,chkrefs,webpdf64,m3L,cmr,mathcenter,noSciVerse,amsmath]{book}
+
+\usepackage{appendix}
+\usepackage{blindtext}
+\usepackage{longtable}
+\usepackage{titlesec}
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage[french]{minitoc}
+\frenchbsetup{StandardLists=true}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{cite}
+\usepackage{setspace}
+\usepackage{pdfpages}
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[intlimits]{amsmath}
+\usepackage{url}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{placeins}
+\usepackage{float} 
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\DeclareGraphicsRule{.tif}{png}{.png}{`convert #1 `dirname #1`/`basename #1 .tif`.png}
+\usepackage{rotating}
+\usepackage{times}
+\usepackage{color}
+\usepackage{array,multirow,makecell}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{dsfont}
+\usepackage{datetime}
+\newcommand{\proced}[1]{Regle\_inference_{#1}}
+\usepackage{algorithmicx}
+\usepackage[ruled]{algorithm}
+\usepackage{algpseudocode}
+\usepackage{algpascal}
+\usepackage{algc}
+\alglanguage{pseudocode}
+\usepackage{latexsym}
+
+\def\appendixpage{\vspace*{8cm} 
+\begin{center} 
+\Huge\textbf{Annexes} 
+\end{center} 
+} 
+\def\appendixname{Annexe}%
+                    
+\renewcommand{\headrulewidth}{1pt}
+
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[LO]{\leftmark }
+\fancyhead[RE]{\rightmark }
+\fancyfoot[LE,RO]{}
+\fancyfoot[LO,C,RE]{}
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setcounter{minitocdepth}{2}
+\pagestyle{fancy}
+\usepackage[includefoot,nomarginpar,
+    top=35mm,bottom=35mm,
+    head=5mm,headsep=7mm,
+    footskip=13mm,
+    hmargin=25mm,bindingoffset=10mm]{geometry}
+
+\definecolor{couleurlien}{RGB}{0,0,101}
+\usepackage[%
+    pdftex,%
+    colorlinks,%
+    hyperindex,%
+    plainpages=false,%
+    bookmarksopen,%
+    bookmarksnumbered,
+    pdfusetitle,%
+    linkcolor=couleurlien,          
+    citecolor=red,
+    filecolor=magenta,
+    urlcolor=cyan     
+]{hyperref}
+
+
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{3}
+\setcounter{minitocdepth}{1}  % CORRECTION 2 : UN SEUL, plus de doublon 
+\def\dedicate#1{\gdef\dedication@text{#1}}
+
+\newcommand{\dedicacepage}{%
+  \begin{flushright}
+    \large\em\null\vskip1in\dedication@text\vfill
+  \end{flushright}
+  \thispagestyle{empty}
+  \cleardoublepage
+}
+\begin{document}
+\dominitoc
+
+
+
+\frontmatter
+\input{Back/these_pagegarde}
+\input{Remerciements/remerciement.tex}
+\newpage
+
+\input{abstract/abstract}
+\input{abreviation/abreviation}
+\tableofcontents
+\listoffigures
+\listoftables
+
+\mainmatter
+\mtcselectlanguage{french}
+\input{Introduction/introduction}
+\input{Conclusion/conclusion}
+
+\backmatter
+\input{Conclusion/conclusion}
+
+\end{document}
